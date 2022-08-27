@@ -1,19 +1,25 @@
-type Config = {
+export type Config = {
+  networkForAlchemy?: string;
   alchemyKey?: string;
   IPFSKey: string;
   dappId: string;
 }
 
-type Conversation = {
+export type Conversation = {
   id: string;
   isGroup: boolean;
   dappId: string;
 }
 
-type MessageResponse = {
+export interface MessageResponse {
   id: string;
   to: string;
   from: string;
-  contentCID: MessageResponse;
+  contentCID: string;
   timestamp: BigInt;
+}
+
+export interface SendMessageProps {
+  to: string;
+  content: string; // JSON
 }
