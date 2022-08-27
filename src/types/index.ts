@@ -9,3 +9,11 @@ type Conversation = {
   isGroup: boolean;
   dappId: string;
 }
+
+type MessageResponse = {
+  id: string;
+  to: string;
+  from: string;
+  contentCID: MessageResponse;
+  timestamp: BigInt;
+}
