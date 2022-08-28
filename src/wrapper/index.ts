@@ -94,13 +94,11 @@ export class Sandesh {
     let contentIPFSCid: string = content
     // Deploy content on IPFS.
     const encryptedMessage = await this.security.encrypt(content, recieverAddress)
-    console.log('encrypted message', encryptedMessage)
 
     contentIPFSCid = await this.storage.saveToIPFS(encryptedMessage)
     const contract = new ethers.Contract(SANDESH_CONTRACT_ADDRESS, ABI.abi, this.provider.getSigner())
     const tx = await contract.sendPrivateMessage(recieverAddress, contentIPFSCid, this.config.dappId)
-    const resp = await tx.wait();
-    console.log(resp)
-    return false
+    await tx.wait();
+    return true
   }
 }
