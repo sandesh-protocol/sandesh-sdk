@@ -19,3 +19,9 @@ or
 ```ts
   npm i -s sandesh
 ```
+
+> It's currently using smart contract deployed on Polygon Mumbai Testnet. But we will migrate to mainnet soon.
+
+## Contributing
+
+Open for commits, suggestions & PRs.
