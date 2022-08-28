@@ -19,7 +19,7 @@ export class Sandesh {
     this.provider = getProvider(this.config)
     this.contract = new ethers.Contract(SANDESH_CONTRACT_ADDRESS, ABI.abi, this.provider)
     this.storage = new Web3Storage({ token: this.config.IPFSKey })
-    this.resolver = new Resolver()
+    this.resolver = new Resolver(configDetails)
   }
 
   // Fetching all conversations for an address.

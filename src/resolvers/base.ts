@@ -1,10 +1,16 @@
+import { ethers } from "ethers";
+
 export abstract class BaseResolver {
+  chain: string;
   contractAddress: string;
   methodName: string;
+  provider?: ethers.providers.JsonRpcProvider
 
-  constructor(contractAddress: string, methodName: string) {
+  constructor(chain: string, contractAddress: string, methodName: string, provider?: ethers.providers.JsonRpcProvider) {
+    this.chain = chain;
     this.contractAddress = contractAddress;
     this.methodName = methodName;
+    this.provider = provider
   }
 
   // Return null if the domain can't be resolved.
