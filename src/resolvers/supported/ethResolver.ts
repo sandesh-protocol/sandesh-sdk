@@ -5,6 +5,7 @@ export class EthResolver extends BaseResolver {
     if (this.provider == null) return null;
 
     try {
+      console.log(domain)
       const response = await this.provider.resolveName(domain);
       return response;
     } catch (e) {

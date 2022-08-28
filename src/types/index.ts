@@ -23,3 +23,11 @@ export interface SendMessageProps {
   to: string;
   content: string; // JSON
 }
+
+export type Message = {
+  id: string;
+  to: string;
+  from: string;
+  data: any;
+  timestamp: BigInt;
+}

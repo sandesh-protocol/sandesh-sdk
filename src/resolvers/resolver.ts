@@ -21,6 +21,7 @@ export class Resolver {
   // Responds with the first resolved domain's address.
   // If domain not resolved the response is null. Hence, asking user that address can't be resolved.
   async resolve(domain: string): Promise<string | null> {
+    console.log('domain', domain)
     for (let i = 0; i < this.resolvers.length; i++) {
       const resolvingResponse = await this.resolvers[i].resolve(domain);
       if (resolvingResponse != null) return resolvingResponse;
